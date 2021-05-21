@@ -139,8 +139,9 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 
 function hideContent()
 {
-
+    $options = get_option('cs_example_plugin_options');
     $script = "
+       <script src=\"https://www.google.com/recaptcha/api.js?render=".$options['captcha_key']."\"></script>
       <script type=\"text/javascript\">
         if (window.grecaptcha) {
             jQuery(document).ready(function($) {
